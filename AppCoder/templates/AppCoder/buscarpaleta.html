@@ -1,0 +1,30 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titp %}
+<p>Estas buscando las paletas de marca: {{marca}}</p>
+{% endblock %}
+
+{% block description %}
+<body style="background-color:thistle"></body>
+
+    {% for pale in form %}
+    {% if pale.imagen %}
+    <p><img height="140px" src="{{pale.imagen.url}}" alt="No hay imagen."></p>
+
+    {% endif %}
+
+        <p>Marca: {{pale.marca}} </p>
+        <p>Nombre: {{pale.nombre}}</p>
+        <p>Forma: {{pale.forma}}</p>
+        <p>Precio: {{pale.precio}}</p>
+
+
+    {% endfor %}
+
+{% endblock %}
+
+    
+</body>
+</html>

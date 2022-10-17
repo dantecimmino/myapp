@@ -1,0 +1,30 @@
+
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titp %}
+
+<h1>Edite la pelota aqui</h1>
+
+{% endblock %}
+
+{% block description %}
+
+<body style="background-color:thistle"></body>
+<form action="" method="POST" enctype="multipart/form-data"> {%csrf_token%}
+
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+
+    <input class="btn btn-primary" type="submit", value="Actualizar">
+    <a class="btn btn-primary" href="{% url 'pelotas'%}">Volver</a>
+
+
+</form>
+
+
+{% endblock %}

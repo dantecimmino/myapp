@@ -1,0 +1,22 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titp %}
+
+Aqui busque por marca las paletas
+    <h4>
+    <form action="/AppCoder/buscarpaleta" method="GET">
+
+        <input type="text" name="marca" id="marca">
+
+        <input type="submit" class="btn btn-primary" value="Buscar">
+        <a class="btn btn-primary" href="{% url 'paletas'%}">Volver</a>
+        
+    
+    
+    
+    </form>
+    </h4>
+    
+{% endblock %}

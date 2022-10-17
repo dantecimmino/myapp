@@ -1,0 +1,56 @@
+
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block botones %}
+<a class="btn btn-primary" href="{% url 'AddPaletas'%}">Agregar Paletas</a>
+<a class="btn btn-primary" href="{% url 'busquedapaleta'%}">Buscar paleta</a>
+{% endblock %}
+
+{% block titp %}
+
+<h1>Estas son nuestras paletas</h1>
+
+{% endblock %}
+
+{% block description %}
+<body style="background-color:thistle"></body>
+
+
+
+
+
+
+    <form>
+        {% for paleta in paletas %}
+
+            {% if paleta.imagen %}
+            <p><img height="160px" src="{{paleta.imagen.url}}" alt="No hay imagen."></p>
+
+            {% endif %}
+            <p class="navbar-brand"> Nombre: {{paleta.nombre}}</p>
+            <p>Material: {{paleta.material}}</p>
+            <p>Marca: {{paleta.marca}}</p>
+            <p>Forma: {{paleta.forma}}</p>
+            <p>Precio: {{paleta.precio}}</p>
+
+
+        ***************************
+        
+
+    <a class="btn btn-primary" href="{% url 'editarpaletas' paleta.nombre %}">Editar</a>
+    <a class="btn btn-primary" href="{% url 'borrarPaletas' paleta.nombre %}">Borrar</a>
+
+    </form>
+
+        
+
+    {% endfor %}
+
+
+
+
+
+
+{% endblock %}

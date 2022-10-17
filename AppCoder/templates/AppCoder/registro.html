@@ -1,0 +1,22 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titp %}
+<h1>Registrese aca</h1> 
+{% endblock %}
+
+{% block description %}
+
+<body style="background-color:thistle"></body>
+<form action="" method="POST"> {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit"> registrarse</button>
+
+
+</form>
+
+
+{% endblock %}

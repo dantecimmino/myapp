@@ -1,0 +1,22 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titp %}
+
+Aqui busque por marca las pelotas
+    <h4>
+    <form action="/AppCoder/buscarpelota" method="GET">
+
+        <input type="text" name="marca" id="marca">
+
+        <input type="submit" class="btn btn-primary" value="Buscar">
+        <a class="btn btn-primary" href="{% url 'pelotas'%}">Volver</a>
+        
+    
+    
+    
+    </form>
+    </h4>
+    
+{% endblock %}

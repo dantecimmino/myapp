@@ -1,0 +1,31 @@
+
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titp %}
+
+<h1>Agregue una paleta nueva</h1>
+
+{% endblock %}
+
+{% block description %}
+<body style="background-color:thistle"></body>
+
+
+
+<form action="" method="POST" enctype="multipart/form-data"> {%csrf_token%}
+
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+
+    <input class="btn btn-primary" type="submit", value="Agregar">
+    <a class="btn btn-primary" href="{% url 'paletas'%}">Volver</a>
+
+</form>
+
+
+{% endblock %}

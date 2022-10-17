@@ -1,0 +1,28 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titp %}
+<p>Estas buscando las pelotas de marca: {{marca}}</p>
+{% endblock %}
+
+{% block description %}
+<body style="background-color:thistle"></body>
+
+    {% for pelo in form %}
+    {% if pelo.imagen %}
+    <p><img height="140px" src="{{pelo.imagen.url}}" alt="No hay imagen."></p>
+
+    {% endif %}
+
+        <p>Marca: {{pelo.marca}} </p>
+        <p>Precio: {{pelo.precio}}</p>
+
+
+    {% endfor %}
+
+{% endblock %}
+
+    
+</body>
+</html>

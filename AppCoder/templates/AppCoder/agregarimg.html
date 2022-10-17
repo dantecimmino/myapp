@@ -1,0 +1,28 @@
+
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titp %}
+
+<h1>Edite su avatar aqui</h1>
+<form action="" method="POST" enctype="multipart/form-data"> {%csrf_token%}
+
+    
+
+    {{form.as_p}}
+
+
+
+    <input class="btn btn-primary" type="submit", value="subir imagen">
+    <a class="btn btn-primary" href="{% url 'inicio'%}">Volver</a>
+
+</form>
+
+{% endblock %}
+
+{% block description %}
+
+
+
+{% endblock %}

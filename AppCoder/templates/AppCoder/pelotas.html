@@ -1,0 +1,38 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block botones %}
+<a class="btn btn-primary" href="{% url 'AddPelotas'%}">Agregar Pelotas</a>
+<a class="btn btn-primary" href="{% url 'busquedapelota'%}">Buscar pelota</a>
+{% endblock %}
+
+{% block titp %}
+<h1>Nuestras pelotas</h1> 
+{% endblock %}
+
+{% block description %}
+<body style="background-color:thistle"></body>
+
+<table>
+
+    {% for pelota in pelotas %}
+
+        {% if pelota.imagen %}
+
+            <p><img height="160px" src="{{pelota.imagen.url}}" alt="No hay imagen."></p>
+
+        {% endif %}
+    <p>Marca: {{pelota.marca}}</p>
+    <p>Precio: {{pelota.precio}}</p>
+    
+*****************
+    <a class="btn btn-primary" href="{% url 'editarpelotas' pelota.marca %}">Editar</a>
+    <a class="btn btn-primary" href="{% url 'borrarPelotas' pelota.marca %}">Borrar</a>
+</table>
+
+    {% endfor %}
+
+   
+
+{% endblock %}
